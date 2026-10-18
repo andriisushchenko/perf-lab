@@ -1,0 +1,6 @@
+*.data
+*.data.old
+*.perf
+*.folded
+matmul_O0
+matmul_O3
