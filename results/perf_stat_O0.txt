@@ -1,0 +1,14 @@
+# started on Sun Oct 18 19:40:44 2026
+
+
+ Performance counter stats for './matmul_O0' (5 runs):
+
+          1,696.85 msec task-clock                                                              ( +-  0.40% )
+                23      context-switches                                                        ( +- 18.78% )
+                 0      cpu-migrations                                                        
+             3,965      page-faults                                                             ( +-  0.01% )
+                 0      major-faults                                                          
+             3,965      minor-faults                                                            ( +-  0.01% )
+
+       1.701342789 +- 0.007192847 seconds time elapsed  ( +-  0.42% )
+

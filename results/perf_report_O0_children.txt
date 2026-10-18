@@ -1,0 +1,106 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 885  of event 'cpu-clock'
+# Event count (approx.): 885885885
+#
+# Children      Self  Command    Shared Object      Symbol                             
+# ........  ........  .........  .................  ...................................
+#
+   100.00%     0.00%  matmul_O0  matmul_O0          [.] _start
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               |          
+                --99.55%--matmul
+
+   100.00%     0.00%  matmul_O0  libc.so.6          [.] __libc_start_main_impl (inlined)
+            |
+            ---__libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               |          
+                --99.55%--matmul
+
+   100.00%     0.00%  matmul_O0  libc.so.6          [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               __libc_start_call_main
+               main
+               |          
+                --99.55%--matmul
+
+   100.00%     0.00%  matmul_O0  libc.so.6          [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               main
+               |          
+                --99.55%--matmul
+
+   100.00%     0.00%  matmul_O0  matmul_O0          [.] main
+            |
+            ---main
+               |          
+                --99.55%--matmul
+
+    99.55%    98.98%  matmul_O0  matmul_O0          [.] matmul
+            |          
+            |--98.98%--_start
+            |          __libc_start_main_impl (inlined)
+            |          call_init (inlined)
+            |          __libc_start_call_main
+            |          main
+            |          matmul
+            |          
+             --0.56%--matmul
+
+     0.56%     0.00%  matmul_O0  [kernel.kallsyms]  [.] asm_exc_page_fault
+            |
+            ---asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+
+     0.56%     0.00%  matmul_O0  [kernel.kallsyms]  [.] exc_page_fault
+            |
+            ---exc_page_fault
+               do_user_addr_fault
+
+     0.56%     0.11%  matmul_O0  [kernel.kallsyms]  [.] do_user_addr_fault
+     0.45%     0.00%  matmul_O0  [kernel.kallsyms]  [.] handle_mm_fault
+     0.45%     0.00%  matmul_O0  [kernel.kallsyms]  [.] __handle_mm_fault
+     0.45%     0.00%  matmul_O0  [kernel.kallsyms]  [.] handle_pte_fault
+     0.34%     0.00%  matmul_O0  [kernel.kallsyms]  [.] do_wp_page
+     0.34%     0.00%  matmul_O0  [kernel.kallsyms]  [.] wp_page_copy
+     0.23%     0.23%  matmul_O0  [kernel.kallsyms]  [k] kernel_init_pages
+     0.23%     0.11%  matmul_O0  matmul_O0          [.] init
+     0.23%     0.23%  matmul_O0  matmul_O0          [.] checksum
+     0.23%     0.00%  matmul_O0  [kernel.kallsyms]  [.] vma_alloc_folio_noprof
+     0.23%     0.00%  matmul_O0  [kernel.kallsyms]  [.] alloc_pages_mpol
+     0.23%     0.00%  matmul_O0  [kernel.kallsyms]  [.] __alloc_frozen_pages_noprof
+     0.23%     0.00%  matmul_O0  [kernel.kallsyms]  [.] get_page_from_freelist
+     0.23%     0.00%  matmul_O0  [kernel.kallsyms]  [.] post_alloc_hook
+     0.11%     0.11%  matmul_O0  [kernel.kallsyms]  [k] __css_rstat_updated
+     0.11%     0.11%  matmul_O0  [kernel.kallsyms]  [k] page_counter_try_charge
+     0.11%     0.11%  matmul_O0  [kernel.kallsyms]  [k] irqentry_exit
+     0.11%     0.00%  matmul_O0  [kernel.kallsyms]  [.] do_anonymous_page
+     0.11%     0.00%  matmul_O0  [kernel.kallsyms]  [.] alloc_anon_folio
+     0.11%     0.00%  matmul_O0  [kernel.kallsyms]  [.] folio_add_new_anon_rmap
+     0.11%     0.00%  matmul_O0  [kernel.kallsyms]  [.] __folio_mod_stat
+     0.11%     0.00%  matmul_O0  [kernel.kallsyms]  [.] __mem_cgroup_charge
+     0.11%     0.00%  matmul_O0  [kernel.kallsyms]  [.] asm_sysvec_call_function_single
+     0.11%     0.00%  matmul_O0  [kernel.kallsyms]  [.] charge_memcg
+     0.11%     0.00%  matmul_O0  [kernel.kallsyms]  [.] lruvec_stat_mod_folio
+     0.11%     0.00%  matmul_O0  [kernel.kallsyms]  [.] mod_memcg_lruvec_state
+     0.11%     0.00%  matmul_O0  [kernel.kallsyms]  [.] sysvec_call_function_single
+     0.11%     0.00%  matmul_O0  [kernel.kallsyms]  [.] try_charge_memcg
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
