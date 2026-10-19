@@ -1,0 +1,232 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 122  of event 'cpu-clock'
+# Event count (approx.): 12201220
+#
+# Overhead  Command    Shared Object      Symbol                    
+# ........  .........  .................  ..........................
+#
+    87.70%  matmul_O3  matmul_O3          [.] matmul
+            |
+            ---matmul
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     4.10%  matmul_O3  [kernel.kallsyms]  [k] kernel_init_pages
+            |
+            ---kernel_init_pages
+               post_alloc_hook
+               get_page_from_freelist
+               __alloc_frozen_pages_noprof
+               alloc_pages_mpol
+               |          
+               |--3.28%--vma_alloc_folio_noprof
+               |          |          
+               |          |--2.46%--wp_page_copy
+               |          |          do_wp_page
+               |          |          handle_pte_fault
+               |          |          __handle_mm_fault
+               |          |          handle_mm_fault
+               |          |          do_user_addr_fault
+               |          |          exc_page_fault
+               |          |          asm_exc_page_fault
+               |          |          matmul
+               |          |          __libc_start_call_main
+               |          |          call_init (inlined)
+               |          |          __libc_start_main_impl (inlined)
+               |          |          _start
+               |          |          
+               |           --0.82%--alloc_anon_folio
+               |                     do_anonymous_page
+               |                     handle_pte_fault
+               |                     __handle_mm_fault
+               |                     handle_mm_fault
+               |                     do_user_addr_fault
+               |                     exc_page_fault
+               |                     asm_exc_page_fault
+               |                     init
+               |                     __libc_start_call_main
+               |                     call_init (inlined)
+               |                     __libc_start_main_impl (inlined)
+               |                     _start
+               |          
+                --0.82%--alloc_pages_noprof
+                          __pmd_alloc
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          rep_stos_alternative
+                          load_elf_interp.isra.0
+                          load_elf_binary
+                          exec_binprm
+                          bprm_execve.part.0
+                          bprm_execve
+                          do_execveat_common.isra.0
+                          __x64_sys_execve
+                          x64_sys_call
+                          do_syscall_64
+                          entry_SYSCALL_64_after_hwframe
+                          0x744fc34ef03b
+
+     2.46%  matmul_O3  [kernel.kallsyms]  [k] do_user_addr_fault
+            |
+            ---do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               matmul
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.82%  matmul_O3  [kernel.kallsyms]  [k] do_anonymous_page
+            |
+            ---do_anonymous_page
+               handle_pte_fault
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               init
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.82%  matmul_O3  [kernel.kallsyms]  [k] folio_add_lru
+            |
+            ---folio_add_lru
+               folio_add_lru_vma
+               do_anonymous_page
+               handle_pte_fault
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               init
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.82%  matmul_O3  [kernel.kallsyms]  [k] handle_softirqs
+            |
+            ---handle_softirqs
+               __irq_exit_rcu
+               irq_exit_rcu
+               sysvec_apic_timer_interrupt
+               asm_sysvec_apic_timer_interrupt
+               kernel_init_pages
+               post_alloc_hook
+               get_page_from_freelist
+               __alloc_frozen_pages_noprof
+               alloc_pages_mpol
+               alloc_pages_noprof
+               __pmd_alloc
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               rep_stos_alternative
+               load_elf_interp.isra.0
+               load_elf_binary
+               exec_binprm
+               bprm_execve.part.0
+               bprm_execve
+               do_execveat_common.isra.0
+               __x64_sys_execve
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               0x744fc34ef03b
+
+     0.82%  matmul_O3  [kernel.kallsyms]  [k] mas_walk
+            |
+            ---mas_walk
+               lock_vma_under_rcu
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               matmul
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.82%  matmul_O3  [kernel.kallsyms]  [k] memcg1_commit_charge
+            |
+            ---memcg1_commit_charge
+               charge_memcg
+               __mem_cgroup_charge
+               folio_prealloc
+               do_fault
+               handle_pte_fault
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               _dl_start
+               _dl_start_user
+
+     0.82%  matmul_O3  [kernel.kallsyms]  [k] memset_orig
+            |
+            ---memset_orig
+               iterate_tty_write
+               file_tty_write.isra.0
+               tty_write
+               vfs_write
+               ksys_write
+               __x64_sys_write
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __libc_write (inlined)
+               new_do_write (inlined)
+               _IO_new_do_write (inlined)
+               _IO_new_file_overflow (inlined)
+               _IO_default_xsputn
+               _IO_default_xsputn
+               _IO_new_file_xsputn (inlined)
+               _IO_new_file_xsputn (inlined)
+               __printf_buffer_flush_to_file (inlined)
+               __printf_buffer_to_file_done
+               __vfprintf_internal
+               ___printf_chk (inlined)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.82%  matmul_O3  [kernel.kallsyms]  [k] vma_alloc_folio_noprof
+            |
+            ---vma_alloc_folio_noprof
+               do_wp_page
+               handle_pte_fault
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               matmul
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

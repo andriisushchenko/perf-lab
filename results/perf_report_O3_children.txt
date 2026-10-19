@@ -1,0 +1,1746 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 122  of event 'cpu-clock'
+# Event count (approx.): 12201220
+#
+# Children      Self  Command    Shared Object         Symbol                             
+# ........  ........  .........  ....................  ...................................
+#
+    97.54%     0.00%  matmul_O3  matmul_O3             [.] _start
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               |          
+               |--94.26%--matmul
+               |          |          
+               |           --6.56%--asm_exc_page_fault
+               |                     exc_page_fault
+               |                     do_user_addr_fault
+               |                     |          
+               |                     |--3.28%--handle_mm_fault
+               |                     |          __handle_mm_fault
+               |                     |          handle_pte_fault
+               |                     |          do_wp_page
+               |                     |          |          
+               |                     |          |--2.46%--wp_page_copy
+               |                     |          |          vma_alloc_folio_noprof
+               |                     |          |          alloc_pages_mpol
+               |                     |          |          __alloc_frozen_pages_noprof
+               |                     |          |          get_page_from_freelist
+               |                     |          |          post_alloc_hook
+               |                     |          |          kernel_init_pages
+               |                     |          |          
+               |                     |           --0.82%--vma_alloc_folio_noprof
+               |                     |          
+               |                      --0.82%--lock_vma_under_rcu
+               |                                mas_walk
+               |          
+               |--2.46%--init
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          handle_pte_fault
+               |          do_anonymous_page
+               |          |          
+               |          |--0.82%--alloc_anon_folio
+               |          |          vma_alloc_folio_noprof
+               |          |          alloc_pages_mpol
+               |          |          __alloc_frozen_pages_noprof
+               |          |          get_page_from_freelist
+               |          |          post_alloc_hook
+               |          |          kernel_init_pages
+               |          |          
+               |           --0.82%--folio_add_lru_vma
+               |                     folio_add_lru
+               |          
+                --0.82%--main
+                          ___printf_chk (inlined)
+                          __vfprintf_internal
+                          __printf_buffer_to_file_done
+                          __printf_buffer_flush_to_file (inlined)
+                          _IO_new_file_xsputn (inlined)
+                          _IO_new_file_xsputn (inlined)
+                          _IO_default_xsputn
+                          _IO_default_xsputn
+                          _IO_new_file_overflow (inlined)
+                          _IO_new_do_write (inlined)
+                          new_do_write (inlined)
+                          __libc_write (inlined)
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_write
+                          ksys_write
+                          vfs_write
+                          tty_write
+                          file_tty_write.isra.0
+                          iterate_tty_write
+                          memset_orig
+
+    97.54%     0.00%  matmul_O3  libc.so.6             [.] __libc_start_main_impl (inlined)
+            |
+            ---__libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               |          
+               |--94.26%--matmul
+               |          |          
+               |           --6.56%--asm_exc_page_fault
+               |                     exc_page_fault
+               |                     do_user_addr_fault
+               |                     |          
+               |                     |--3.28%--handle_mm_fault
+               |                     |          __handle_mm_fault
+               |                     |          handle_pte_fault
+               |                     |          do_wp_page
+               |                     |          |          
+               |                     |          |--2.46%--wp_page_copy
+               |                     |          |          vma_alloc_folio_noprof
+               |                     |          |          alloc_pages_mpol
+               |                     |          |          __alloc_frozen_pages_noprof
+               |                     |          |          get_page_from_freelist
+               |                     |          |          post_alloc_hook
+               |                     |          |          kernel_init_pages
+               |                     |          |          
+               |                     |           --0.82%--vma_alloc_folio_noprof
+               |                     |          
+               |                      --0.82%--lock_vma_under_rcu
+               |                                mas_walk
+               |          
+               |--2.46%--init
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          handle_pte_fault
+               |          do_anonymous_page
+               |          |          
+               |          |--0.82%--alloc_anon_folio
+               |          |          vma_alloc_folio_noprof
+               |          |          alloc_pages_mpol
+               |          |          __alloc_frozen_pages_noprof
+               |          |          get_page_from_freelist
+               |          |          post_alloc_hook
+               |          |          kernel_init_pages
+               |          |          
+               |           --0.82%--folio_add_lru_vma
+               |                     folio_add_lru
+               |          
+                --0.82%--main
+                          ___printf_chk (inlined)
+                          __vfprintf_internal
+                          __printf_buffer_to_file_done
+                          __printf_buffer_flush_to_file (inlined)
+                          _IO_new_file_xsputn (inlined)
+                          _IO_new_file_xsputn (inlined)
+                          _IO_default_xsputn
+                          _IO_default_xsputn
+                          _IO_new_file_overflow (inlined)
+                          _IO_new_do_write (inlined)
+                          new_do_write (inlined)
+                          __libc_write (inlined)
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_write
+                          ksys_write
+                          vfs_write
+                          tty_write
+                          file_tty_write.isra.0
+                          iterate_tty_write
+                          memset_orig
+
+    97.54%     0.00%  matmul_O3  libc.so.6             [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               __libc_start_call_main
+               |          
+               |--94.26%--matmul
+               |          |          
+               |           --6.56%--asm_exc_page_fault
+               |                     exc_page_fault
+               |                     do_user_addr_fault
+               |                     |          
+               |                     |--3.28%--handle_mm_fault
+               |                     |          __handle_mm_fault
+               |                     |          handle_pte_fault
+               |                     |          do_wp_page
+               |                     |          |          
+               |                     |          |--2.46%--wp_page_copy
+               |                     |          |          vma_alloc_folio_noprof
+               |                     |          |          alloc_pages_mpol
+               |                     |          |          __alloc_frozen_pages_noprof
+               |                     |          |          get_page_from_freelist
+               |                     |          |          post_alloc_hook
+               |                     |          |          kernel_init_pages
+               |                     |          |          
+               |                     |           --0.82%--vma_alloc_folio_noprof
+               |                     |          
+               |                      --0.82%--lock_vma_under_rcu
+               |                                mas_walk
+               |          
+               |--2.46%--init
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          handle_pte_fault
+               |          do_anonymous_page
+               |          |          
+               |          |--0.82%--alloc_anon_folio
+               |          |          vma_alloc_folio_noprof
+               |          |          alloc_pages_mpol
+               |          |          __alloc_frozen_pages_noprof
+               |          |          get_page_from_freelist
+               |          |          post_alloc_hook
+               |          |          kernel_init_pages
+               |          |          
+               |           --0.82%--folio_add_lru_vma
+               |                     folio_add_lru
+               |          
+                --0.82%--main
+                          ___printf_chk (inlined)
+                          __vfprintf_internal
+                          __printf_buffer_to_file_done
+                          __printf_buffer_flush_to_file (inlined)
+                          _IO_new_file_xsputn (inlined)
+                          _IO_new_file_xsputn (inlined)
+                          _IO_default_xsputn
+                          _IO_default_xsputn
+                          _IO_new_file_overflow (inlined)
+                          _IO_new_do_write (inlined)
+                          new_do_write (inlined)
+                          __libc_write (inlined)
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_write
+                          ksys_write
+                          vfs_write
+                          tty_write
+                          file_tty_write.isra.0
+                          iterate_tty_write
+                          memset_orig
+
+    97.54%     0.00%  matmul_O3  libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+               |--94.26%--matmul
+               |          |          
+               |           --6.56%--asm_exc_page_fault
+               |                     exc_page_fault
+               |                     do_user_addr_fault
+               |                     |          
+               |                     |--3.28%--handle_mm_fault
+               |                     |          __handle_mm_fault
+               |                     |          handle_pte_fault
+               |                     |          do_wp_page
+               |                     |          |          
+               |                     |          |--2.46%--wp_page_copy
+               |                     |          |          vma_alloc_folio_noprof
+               |                     |          |          alloc_pages_mpol
+               |                     |          |          __alloc_frozen_pages_noprof
+               |                     |          |          get_page_from_freelist
+               |                     |          |          post_alloc_hook
+               |                     |          |          kernel_init_pages
+               |                     |          |          
+               |                     |           --0.82%--vma_alloc_folio_noprof
+               |                     |          
+               |                      --0.82%--lock_vma_under_rcu
+               |                                mas_walk
+               |          
+               |--2.46%--init
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          handle_pte_fault
+               |          do_anonymous_page
+               |          |          
+               |          |--0.82%--alloc_anon_folio
+               |          |          vma_alloc_folio_noprof
+               |          |          alloc_pages_mpol
+               |          |          __alloc_frozen_pages_noprof
+               |          |          get_page_from_freelist
+               |          |          post_alloc_hook
+               |          |          kernel_init_pages
+               |          |          
+               |           --0.82%--folio_add_lru_vma
+               |                     folio_add_lru
+               |          
+                --0.82%--main
+                          ___printf_chk (inlined)
+                          __vfprintf_internal
+                          __printf_buffer_to_file_done
+                          __printf_buffer_flush_to_file (inlined)
+                          _IO_new_file_xsputn (inlined)
+                          _IO_new_file_xsputn (inlined)
+                          _IO_default_xsputn
+                          _IO_default_xsputn
+                          _IO_new_file_overflow (inlined)
+                          _IO_new_do_write (inlined)
+                          new_do_write (inlined)
+                          __libc_write (inlined)
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_write
+                          ksys_write
+                          vfs_write
+                          tty_write
+                          file_tty_write.isra.0
+                          iterate_tty_write
+                          memset_orig
+
+    94.26%    87.70%  matmul_O3  matmul_O3             [.] matmul
+            |          
+            |--87.70%--_start
+            |          __libc_start_main_impl (inlined)
+            |          call_init (inlined)
+            |          __libc_start_call_main
+            |          matmul
+            |          
+             --6.56%--matmul
+                       asm_exc_page_fault
+                       exc_page_fault
+                       do_user_addr_fault
+                       |          
+                       |--3.28%--handle_mm_fault
+                       |          __handle_mm_fault
+                       |          handle_pte_fault
+                       |          do_wp_page
+                       |          |          
+                       |          |--2.46%--wp_page_copy
+                       |          |          vma_alloc_folio_noprof
+                       |          |          alloc_pages_mpol
+                       |          |          __alloc_frozen_pages_noprof
+                       |          |          get_page_from_freelist
+                       |          |          post_alloc_hook
+                       |          |          kernel_init_pages
+                       |          |          
+                       |           --0.82%--vma_alloc_folio_noprof
+                       |          
+                        --0.82%--lock_vma_under_rcu
+                                  mas_walk
+
+    11.48%     0.00%  matmul_O3  [kernel.kallsyms]     [.] asm_exc_page_fault
+            |
+            ---asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               |          
+               |--8.20%--handle_mm_fault
+               |          __handle_mm_fault
+               |          |          
+               |          |--6.56%--handle_pte_fault
+               |          |          |          
+               |          |          |--3.28%--do_wp_page
+               |          |          |          |          
+               |          |          |          |--2.46%--wp_page_copy
+               |          |          |          |          vma_alloc_folio_noprof
+               |          |          |          |          alloc_pages_mpol
+               |          |          |          |          __alloc_frozen_pages_noprof
+               |          |          |          |          get_page_from_freelist
+               |          |          |          |          post_alloc_hook
+               |          |          |          |          kernel_init_pages
+               |          |          |          |          
+               |          |          |           --0.82%--vma_alloc_folio_noprof
+               |          |          |          
+               |          |          |--2.46%--do_anonymous_page
+               |          |          |          |          
+               |          |          |          |--0.82%--alloc_anon_folio
+               |          |          |          |          vma_alloc_folio_noprof
+               |          |          |          |          alloc_pages_mpol
+               |          |          |          |          __alloc_frozen_pages_noprof
+               |          |          |          |          get_page_from_freelist
+               |          |          |          |          post_alloc_hook
+               |          |          |          |          kernel_init_pages
+               |          |          |          |          
+               |          |          |           --0.82%--folio_add_lru_vma
+               |          |          |                     folio_add_lru
+               |          |          |          
+               |          |           --0.82%--do_fault
+               |          |                     folio_prealloc
+               |          |                     __mem_cgroup_charge
+               |          |                     charge_memcg
+               |          |                     memcg1_commit_charge
+               |          |          
+               |           --1.64%--__pmd_alloc
+               |                     alloc_pages_noprof
+               |                     alloc_pages_mpol
+               |                     __alloc_frozen_pages_noprof
+               |                     get_page_from_freelist
+               |                     post_alloc_hook
+               |                     kernel_init_pages
+               |                     |          
+               |                      --0.82%--asm_sysvec_apic_timer_interrupt
+               |                                sysvec_apic_timer_interrupt
+               |                                irq_exit_rcu
+               |                                __irq_exit_rcu
+               |                                handle_softirqs
+               |          
+                --0.82%--lock_vma_under_rcu
+                          mas_walk
+
+    11.48%     0.00%  matmul_O3  [kernel.kallsyms]     [.] exc_page_fault
+            |
+            ---exc_page_fault
+               do_user_addr_fault
+               |          
+               |--8.20%--handle_mm_fault
+               |          __handle_mm_fault
+               |          |          
+               |          |--6.56%--handle_pte_fault
+               |          |          |          
+               |          |          |--3.28%--do_wp_page
+               |          |          |          |          
+               |          |          |          |--2.46%--wp_page_copy
+               |          |          |          |          vma_alloc_folio_noprof
+               |          |          |          |          alloc_pages_mpol
+               |          |          |          |          __alloc_frozen_pages_noprof
+               |          |          |          |          get_page_from_freelist
+               |          |          |          |          post_alloc_hook
+               |          |          |          |          kernel_init_pages
+               |          |          |          |          
+               |          |          |           --0.82%--vma_alloc_folio_noprof
+               |          |          |          
+               |          |          |--2.46%--do_anonymous_page
+               |          |          |          |          
+               |          |          |          |--0.82%--alloc_anon_folio
+               |          |          |          |          vma_alloc_folio_noprof
+               |          |          |          |          alloc_pages_mpol
+               |          |          |          |          __alloc_frozen_pages_noprof
+               |          |          |          |          get_page_from_freelist
+               |          |          |          |          post_alloc_hook
+               |          |          |          |          kernel_init_pages
+               |          |          |          |          
+               |          |          |           --0.82%--folio_add_lru_vma
+               |          |          |                     folio_add_lru
+               |          |          |          
+               |          |           --0.82%--do_fault
+               |          |                     folio_prealloc
+               |          |                     __mem_cgroup_charge
+               |          |                     charge_memcg
+               |          |                     memcg1_commit_charge
+               |          |          
+               |           --1.64%--__pmd_alloc
+               |                     alloc_pages_noprof
+               |                     alloc_pages_mpol
+               |                     __alloc_frozen_pages_noprof
+               |                     get_page_from_freelist
+               |                     post_alloc_hook
+               |                     kernel_init_pages
+               |                     |          
+               |                      --0.82%--asm_sysvec_apic_timer_interrupt
+               |                                sysvec_apic_timer_interrupt
+               |                                irq_exit_rcu
+               |                                __irq_exit_rcu
+               |                                handle_softirqs
+               |          
+                --0.82%--lock_vma_under_rcu
+                          mas_walk
+
+    11.48%     2.46%  matmul_O3  [kernel.kallsyms]     [.] do_user_addr_fault
+            |          
+            |--9.02%--do_user_addr_fault
+            |          |          
+            |          |--8.20%--handle_mm_fault
+            |          |          __handle_mm_fault
+            |          |          |          
+            |          |          |--6.56%--handle_pte_fault
+            |          |          |          |          
+            |          |          |          |--3.28%--do_wp_page
+            |          |          |          |          |          
+            |          |          |          |          |--2.46%--wp_page_copy
+            |          |          |          |          |          vma_alloc_folio_noprof
+            |          |          |          |          |          alloc_pages_mpol
+            |          |          |          |          |          __alloc_frozen_pages_noprof
+            |          |          |          |          |          get_page_from_freelist
+            |          |          |          |          |          post_alloc_hook
+            |          |          |          |          |          kernel_init_pages
+            |          |          |          |          |          
+            |          |          |          |           --0.82%--vma_alloc_folio_noprof
+            |          |          |          |          
+            |          |          |          |--2.46%--do_anonymous_page
+            |          |          |          |          |          
+            |          |          |          |          |--0.82%--alloc_anon_folio
+            |          |          |          |          |          vma_alloc_folio_noprof
+            |          |          |          |          |          alloc_pages_mpol
+            |          |          |          |          |          __alloc_frozen_pages_noprof
+            |          |          |          |          |          get_page_from_freelist
+            |          |          |          |          |          post_alloc_hook
+            |          |          |          |          |          kernel_init_pages
+            |          |          |          |          |          
+            |          |          |          |           --0.82%--folio_add_lru_vma
+            |          |          |          |                     folio_add_lru
+            |          |          |          |          
+            |          |          |           --0.82%--do_fault
+            |          |          |                     folio_prealloc
+            |          |          |                     __mem_cgroup_charge
+            |          |          |                     charge_memcg
+            |          |          |                     memcg1_commit_charge
+            |          |          |          
+            |          |           --1.64%--__pmd_alloc
+            |          |                     alloc_pages_noprof
+            |          |                     alloc_pages_mpol
+            |          |                     __alloc_frozen_pages_noprof
+            |          |                     get_page_from_freelist
+            |          |                     post_alloc_hook
+            |          |                     kernel_init_pages
+            |          |                     |          
+            |          |                      --0.82%--asm_sysvec_apic_timer_interrupt
+            |          |                                sysvec_apic_timer_interrupt
+            |          |                                irq_exit_rcu
+            |          |                                __irq_exit_rcu
+            |          |                                handle_softirqs
+            |          |          
+            |           --0.82%--lock_vma_under_rcu
+            |                     mas_walk
+            |          
+             --2.46%--_start
+                       __libc_start_main_impl (inlined)
+                       call_init (inlined)
+                       __libc_start_call_main
+                       matmul
+                       asm_exc_page_fault
+                       exc_page_fault
+                       do_user_addr_fault
+
+     8.20%     0.00%  matmul_O3  [kernel.kallsyms]     [.] handle_mm_fault
+            |
+            ---handle_mm_fault
+               __handle_mm_fault
+               |          
+               |--6.56%--handle_pte_fault
+               |          |          
+               |          |--3.28%--do_wp_page
+               |          |          |          
+               |          |          |--2.46%--wp_page_copy
+               |          |          |          vma_alloc_folio_noprof
+               |          |          |          alloc_pages_mpol
+               |          |          |          __alloc_frozen_pages_noprof
+               |          |          |          get_page_from_freelist
+               |          |          |          post_alloc_hook
+               |          |          |          kernel_init_pages
+               |          |          |          
+               |          |           --0.82%--vma_alloc_folio_noprof
+               |          |          
+               |          |--2.46%--do_anonymous_page
+               |          |          |          
+               |          |          |--0.82%--alloc_anon_folio
+               |          |          |          vma_alloc_folio_noprof
+               |          |          |          alloc_pages_mpol
+               |          |          |          __alloc_frozen_pages_noprof
+               |          |          |          get_page_from_freelist
+               |          |          |          post_alloc_hook
+               |          |          |          kernel_init_pages
+               |          |          |          
+               |          |           --0.82%--folio_add_lru_vma
+               |          |                     folio_add_lru
+               |          |          
+               |           --0.82%--do_fault
+               |                     folio_prealloc
+               |                     __mem_cgroup_charge
+               |                     charge_memcg
+               |                     memcg1_commit_charge
+               |          
+                --1.64%--__pmd_alloc
+                          alloc_pages_noprof
+                          alloc_pages_mpol
+                          __alloc_frozen_pages_noprof
+                          get_page_from_freelist
+                          post_alloc_hook
+                          kernel_init_pages
+                          |          
+                           --0.82%--asm_sysvec_apic_timer_interrupt
+                                     sysvec_apic_timer_interrupt
+                                     irq_exit_rcu
+                                     __irq_exit_rcu
+                                     handle_softirqs
+
+     8.20%     0.00%  matmul_O3  [kernel.kallsyms]     [.] __handle_mm_fault
+            |
+            ---__handle_mm_fault
+               |          
+               |--6.56%--handle_pte_fault
+               |          |          
+               |          |--3.28%--do_wp_page
+               |          |          |          
+               |          |          |--2.46%--wp_page_copy
+               |          |          |          vma_alloc_folio_noprof
+               |          |          |          alloc_pages_mpol
+               |          |          |          __alloc_frozen_pages_noprof
+               |          |          |          get_page_from_freelist
+               |          |          |          post_alloc_hook
+               |          |          |          kernel_init_pages
+               |          |          |          
+               |          |           --0.82%--vma_alloc_folio_noprof
+               |          |          
+               |          |--2.46%--do_anonymous_page
+               |          |          |          
+               |          |          |--0.82%--alloc_anon_folio
+               |          |          |          vma_alloc_folio_noprof
+               |          |          |          alloc_pages_mpol
+               |          |          |          __alloc_frozen_pages_noprof
+               |          |          |          get_page_from_freelist
+               |          |          |          post_alloc_hook
+               |          |          |          kernel_init_pages
+               |          |          |          
+               |          |           --0.82%--folio_add_lru_vma
+               |          |                     folio_add_lru
+               |          |          
+               |           --0.82%--do_fault
+               |                     folio_prealloc
+               |                     __mem_cgroup_charge
+               |                     charge_memcg
+               |                     memcg1_commit_charge
+               |          
+                --1.64%--__pmd_alloc
+                          alloc_pages_noprof
+                          alloc_pages_mpol
+                          __alloc_frozen_pages_noprof
+                          get_page_from_freelist
+                          post_alloc_hook
+                          kernel_init_pages
+                          |          
+                           --0.82%--asm_sysvec_apic_timer_interrupt
+                                     sysvec_apic_timer_interrupt
+                                     irq_exit_rcu
+                                     __irq_exit_rcu
+                                     handle_softirqs
+
+     6.56%     0.00%  matmul_O3  [kernel.kallsyms]     [.] handle_pte_fault
+            |
+            ---handle_pte_fault
+               |          
+               |--3.28%--do_wp_page
+               |          |          
+               |          |--2.46%--wp_page_copy
+               |          |          vma_alloc_folio_noprof
+               |          |          alloc_pages_mpol
+               |          |          __alloc_frozen_pages_noprof
+               |          |          get_page_from_freelist
+               |          |          post_alloc_hook
+               |          |          kernel_init_pages
+               |          |          
+               |           --0.82%--vma_alloc_folio_noprof
+               |          
+               |--2.46%--do_anonymous_page
+               |          |          
+               |          |--0.82%--alloc_anon_folio
+               |          |          vma_alloc_folio_noprof
+               |          |          alloc_pages_mpol
+               |          |          __alloc_frozen_pages_noprof
+               |          |          get_page_from_freelist
+               |          |          post_alloc_hook
+               |          |          kernel_init_pages
+               |          |          
+               |           --0.82%--folio_add_lru_vma
+               |                     folio_add_lru
+               |          
+                --0.82%--do_fault
+                          folio_prealloc
+                          __mem_cgroup_charge
+                          charge_memcg
+                          memcg1_commit_charge
+
+     4.92%     4.10%  matmul_O3  [kernel.kallsyms]     [k] kernel_init_pages
+            |          
+            |--3.28%--_start
+            |          __libc_start_main_impl (inlined)
+            |          call_init (inlined)
+            |          __libc_start_call_main
+            |          |          
+            |          |--2.46%--matmul
+            |          |          asm_exc_page_fault
+            |          |          exc_page_fault
+            |          |          do_user_addr_fault
+            |          |          handle_mm_fault
+            |          |          __handle_mm_fault
+            |          |          handle_pte_fault
+            |          |          do_wp_page
+            |          |          wp_page_copy
+            |          |          vma_alloc_folio_noprof
+            |          |          alloc_pages_mpol
+            |          |          __alloc_frozen_pages_noprof
+            |          |          get_page_from_freelist
+            |          |          post_alloc_hook
+            |          |          kernel_init_pages
+            |          |          
+            |           --0.82%--init
+            |                     asm_exc_page_fault
+            |                     exc_page_fault
+            |                     do_user_addr_fault
+            |                     handle_mm_fault
+            |                     __handle_mm_fault
+            |                     handle_pte_fault
+            |                     do_anonymous_page
+            |                     alloc_anon_folio
+            |                     vma_alloc_folio_noprof
+            |                     alloc_pages_mpol
+            |                     __alloc_frozen_pages_noprof
+            |                     get_page_from_freelist
+            |                     post_alloc_hook
+            |                     kernel_init_pages
+            |          
+            |--0.82%--kernel_init_pages
+            |          asm_sysvec_apic_timer_interrupt
+            |          sysvec_apic_timer_interrupt
+            |          irq_exit_rcu
+            |          __irq_exit_rcu
+            |          handle_softirqs
+            |          
+             --0.82%--0x744fc34ef03b
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       x64_sys_call
+                       __x64_sys_execve
+                       do_execveat_common.isra.0
+                       bprm_execve
+                       bprm_execve.part.0
+                       exec_binprm
+                       load_elf_binary
+                       load_elf_interp.isra.0
+                       rep_stos_alternative
+                       asm_exc_page_fault
+                       exc_page_fault
+                       do_user_addr_fault
+                       handle_mm_fault
+                       __handle_mm_fault
+                       __pmd_alloc
+                       alloc_pages_noprof
+                       alloc_pages_mpol
+                       __alloc_frozen_pages_noprof
+                       get_page_from_freelist
+                       post_alloc_hook
+                       kernel_init_pages
+
+     4.92%     0.00%  matmul_O3  [kernel.kallsyms]     [.] alloc_pages_mpol
+            |
+            ---alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     4.92%     0.00%  matmul_O3  [kernel.kallsyms]     [.] __alloc_frozen_pages_noprof
+            |
+            ---__alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     4.92%     0.00%  matmul_O3  [kernel.kallsyms]     [.] get_page_from_freelist
+            |
+            ---get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     4.92%     0.00%  matmul_O3  [kernel.kallsyms]     [.] post_alloc_hook
+            |
+            ---post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     4.10%     0.82%  matmul_O3  [kernel.kallsyms]     [.] vma_alloc_folio_noprof
+            |          
+            |--3.28%--vma_alloc_folio_noprof
+            |          alloc_pages_mpol
+            |          __alloc_frozen_pages_noprof
+            |          get_page_from_freelist
+            |          post_alloc_hook
+            |          kernel_init_pages
+            |          
+             --0.82%--_start
+                       __libc_start_main_impl (inlined)
+                       call_init (inlined)
+                       __libc_start_call_main
+                       matmul
+                       asm_exc_page_fault
+                       exc_page_fault
+                       do_user_addr_fault
+                       handle_mm_fault
+                       __handle_mm_fault
+                       handle_pte_fault
+                       do_wp_page
+                       vma_alloc_folio_noprof
+
+     3.28%     0.00%  matmul_O3  [kernel.kallsyms]     [.] do_wp_page
+            |
+            ---do_wp_page
+               |          
+               |--2.46%--wp_page_copy
+               |          vma_alloc_folio_noprof
+               |          alloc_pages_mpol
+               |          __alloc_frozen_pages_noprof
+               |          get_page_from_freelist
+               |          post_alloc_hook
+               |          kernel_init_pages
+               |          
+                --0.82%--vma_alloc_folio_noprof
+
+     2.46%     0.00%  matmul_O3  [kernel.kallsyms]     [.] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               |          
+               |--1.64%--__x64_sys_execve
+               |          do_execveat_common.isra.0
+               |          bprm_execve
+               |          bprm_execve.part.0
+               |          exec_binprm
+               |          load_elf_binary
+               |          load_elf_interp.isra.0
+               |          rep_stos_alternative
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          __pmd_alloc
+               |          alloc_pages_noprof
+               |          alloc_pages_mpol
+               |          __alloc_frozen_pages_noprof
+               |          get_page_from_freelist
+               |          post_alloc_hook
+               |          kernel_init_pages
+               |          |          
+               |           --0.82%--asm_sysvec_apic_timer_interrupt
+               |                     sysvec_apic_timer_interrupt
+               |                     irq_exit_rcu
+               |                     __irq_exit_rcu
+               |                     handle_softirqs
+               |          
+                --0.82%--__x64_sys_write
+                          ksys_write
+                          vfs_write
+                          tty_write
+                          file_tty_write.isra.0
+                          iterate_tty_write
+                          memset_orig
+
+     2.46%     0.00%  matmul_O3  [kernel.kallsyms]     [.] do_syscall_64
+            |
+            ---do_syscall_64
+               x64_sys_call
+               |          
+               |--1.64%--__x64_sys_execve
+               |          do_execveat_common.isra.0
+               |          bprm_execve
+               |          bprm_execve.part.0
+               |          exec_binprm
+               |          load_elf_binary
+               |          load_elf_interp.isra.0
+               |          rep_stos_alternative
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          __pmd_alloc
+               |          alloc_pages_noprof
+               |          alloc_pages_mpol
+               |          __alloc_frozen_pages_noprof
+               |          get_page_from_freelist
+               |          post_alloc_hook
+               |          kernel_init_pages
+               |          |          
+               |           --0.82%--asm_sysvec_apic_timer_interrupt
+               |                     sysvec_apic_timer_interrupt
+               |                     irq_exit_rcu
+               |                     __irq_exit_rcu
+               |                     handle_softirqs
+               |          
+                --0.82%--__x64_sys_write
+                          ksys_write
+                          vfs_write
+                          tty_write
+                          file_tty_write.isra.0
+                          iterate_tty_write
+                          memset_orig
+
+     2.46%     0.00%  matmul_O3  [kernel.kallsyms]     [.] x64_sys_call
+            |
+            ---x64_sys_call
+               |          
+               |--1.64%--__x64_sys_execve
+               |          do_execveat_common.isra.0
+               |          bprm_execve
+               |          bprm_execve.part.0
+               |          exec_binprm
+               |          load_elf_binary
+               |          load_elf_interp.isra.0
+               |          rep_stos_alternative
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          __pmd_alloc
+               |          alloc_pages_noprof
+               |          alloc_pages_mpol
+               |          __alloc_frozen_pages_noprof
+               |          get_page_from_freelist
+               |          post_alloc_hook
+               |          kernel_init_pages
+               |          |          
+               |           --0.82%--asm_sysvec_apic_timer_interrupt
+               |                     sysvec_apic_timer_interrupt
+               |                     irq_exit_rcu
+               |                     __irq_exit_rcu
+               |                     handle_softirqs
+               |          
+                --0.82%--__x64_sys_write
+                          ksys_write
+                          vfs_write
+                          tty_write
+                          file_tty_write.isra.0
+                          iterate_tty_write
+                          memset_orig
+
+     2.46%     0.00%  matmul_O3  matmul_O3             [.] init
+            |
+            ---init
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_anonymous_page
+               |          
+               |--0.82%--alloc_anon_folio
+               |          vma_alloc_folio_noprof
+               |          alloc_pages_mpol
+               |          __alloc_frozen_pages_noprof
+               |          get_page_from_freelist
+               |          post_alloc_hook
+               |          kernel_init_pages
+               |          
+                --0.82%--folio_add_lru_vma
+                          folio_add_lru
+
+     2.46%     0.82%  matmul_O3  [kernel.kallsyms]     [.] do_anonymous_page
+            |          
+            |--1.64%--do_anonymous_page
+            |          |          
+            |          |--0.82%--alloc_anon_folio
+            |          |          vma_alloc_folio_noprof
+            |          |          alloc_pages_mpol
+            |          |          __alloc_frozen_pages_noprof
+            |          |          get_page_from_freelist
+            |          |          post_alloc_hook
+            |          |          kernel_init_pages
+            |          |          
+            |           --0.82%--folio_add_lru_vma
+            |                     folio_add_lru
+            |          
+             --0.82%--_start
+                       __libc_start_main_impl (inlined)
+                       call_init (inlined)
+                       __libc_start_call_main
+                       init
+                       asm_exc_page_fault
+                       exc_page_fault
+                       do_user_addr_fault
+                       handle_mm_fault
+                       __handle_mm_fault
+                       handle_pte_fault
+                       do_anonymous_page
+
+     2.46%     0.00%  matmul_O3  [kernel.kallsyms]     [.] wp_page_copy
+            |
+            ---wp_page_copy
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     1.64%     0.00%  matmul_O3  [unknown]             [k] 0x0000744fc34ef03b
+            |
+            ---0x744fc34ef03b
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               load_elf_interp.isra.0
+               rep_stos_alternative
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __pmd_alloc
+               alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     1.64%     0.00%  matmul_O3  [kernel.kallsyms]     [.] __x64_sys_execve
+            |
+            ---__x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               load_elf_interp.isra.0
+               rep_stos_alternative
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __pmd_alloc
+               alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     1.64%     0.00%  matmul_O3  [kernel.kallsyms]     [.] do_execveat_common.isra.0
+            |
+            ---do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               load_elf_interp.isra.0
+               rep_stos_alternative
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __pmd_alloc
+               alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     1.64%     0.00%  matmul_O3  [kernel.kallsyms]     [.] bprm_execve
+            |
+            ---bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               load_elf_interp.isra.0
+               rep_stos_alternative
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __pmd_alloc
+               alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     1.64%     0.00%  matmul_O3  [kernel.kallsyms]     [.] bprm_execve.part.0
+            |
+            ---bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               load_elf_interp.isra.0
+               rep_stos_alternative
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __pmd_alloc
+               alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     1.64%     0.00%  matmul_O3  [kernel.kallsyms]     [.] exec_binprm
+            |
+            ---exec_binprm
+               load_elf_binary
+               load_elf_interp.isra.0
+               rep_stos_alternative
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __pmd_alloc
+               alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     1.64%     0.00%  matmul_O3  [kernel.kallsyms]     [.] load_elf_binary
+            |
+            ---load_elf_binary
+               load_elf_interp.isra.0
+               rep_stos_alternative
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __pmd_alloc
+               alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     1.64%     0.00%  matmul_O3  [kernel.kallsyms]     [.] load_elf_interp.isra.0
+            |
+            ---load_elf_interp.isra.0
+               rep_stos_alternative
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __pmd_alloc
+               alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     1.64%     0.00%  matmul_O3  [kernel.kallsyms]     [.] rep_stos_alternative
+            |
+            ---rep_stos_alternative
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __pmd_alloc
+               alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     1.64%     0.00%  matmul_O3  [kernel.kallsyms]     [.] __pmd_alloc
+            |
+            ---__pmd_alloc
+               alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     1.64%     0.00%  matmul_O3  [kernel.kallsyms]     [.] alloc_pages_noprof
+            |
+            ---alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               |          
+                --0.82%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+     0.82%     0.82%  matmul_O3  [kernel.kallsyms]     [k] handle_softirqs
+            |
+            ---0x744fc34ef03b
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               load_elf_interp.isra.0
+               rep_stos_alternative
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               __pmd_alloc
+               alloc_pages_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+               asm_sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               irq_exit_rcu
+               __irq_exit_rcu
+               handle_softirqs
+
+     0.82%     0.82%  matmul_O3  [kernel.kallsyms]     [k] memset_orig
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               ___printf_chk (inlined)
+               __vfprintf_internal
+               __printf_buffer_to_file_done
+               __printf_buffer_flush_to_file (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_default_xsputn
+               _IO_default_xsputn
+               _IO_new_file_overflow (inlined)
+               _IO_new_do_write (inlined)
+               new_do_write (inlined)
+               __libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  matmul_O3             [.] main
+            |
+            ---main
+               ___printf_chk (inlined)
+               __vfprintf_internal
+               __printf_buffer_to_file_done
+               __printf_buffer_flush_to_file (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_default_xsputn
+               _IO_default_xsputn
+               _IO_new_file_overflow (inlined)
+               _IO_new_do_write (inlined)
+               new_do_write (inlined)
+               __libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  libc.so.6             [.] ___printf_chk (inlined)
+            |
+            ---___printf_chk (inlined)
+               __vfprintf_internal
+               __printf_buffer_to_file_done
+               __printf_buffer_flush_to_file (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_default_xsputn
+               _IO_default_xsputn
+               _IO_new_file_overflow (inlined)
+               _IO_new_do_write (inlined)
+               new_do_write (inlined)
+               __libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  libc.so.6             [.] __vfprintf_internal
+            |
+            ---__vfprintf_internal
+               __printf_buffer_to_file_done
+               __printf_buffer_flush_to_file (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_default_xsputn
+               _IO_default_xsputn
+               _IO_new_file_overflow (inlined)
+               _IO_new_do_write (inlined)
+               new_do_write (inlined)
+               __libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  libc.so.6             [.] __printf_buffer_to_file_done
+            |
+            ---__printf_buffer_to_file_done
+               __printf_buffer_flush_to_file (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_default_xsputn
+               _IO_default_xsputn
+               _IO_new_file_overflow (inlined)
+               _IO_new_do_write (inlined)
+               new_do_write (inlined)
+               __libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  libc.so.6             [.] __printf_buffer_flush_to_file (inlined)
+            |
+            ---__printf_buffer_flush_to_file (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_default_xsputn
+               _IO_default_xsputn
+               _IO_new_file_overflow (inlined)
+               _IO_new_do_write (inlined)
+               new_do_write (inlined)
+               __libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  libc.so.6             [.] _IO_new_file_xsputn (inlined)
+            |
+            ---_IO_new_file_xsputn (inlined)
+               _IO_new_file_xsputn (inlined)
+               _IO_default_xsputn
+               _IO_default_xsputn
+               _IO_new_file_overflow (inlined)
+               _IO_new_do_write (inlined)
+               new_do_write (inlined)
+               __libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  libc.so.6             [.] _IO_default_xsputn
+            |
+            ---_IO_default_xsputn
+               _IO_default_xsputn
+               _IO_new_file_overflow (inlined)
+               _IO_new_do_write (inlined)
+               new_do_write (inlined)
+               __libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.82%  matmul_O3  [kernel.kallsyms]     [k] folio_add_lru
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               init
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_anonymous_page
+               folio_add_lru_vma
+               folio_add_lru
+
+     0.82%     0.00%  matmul_O3  libc.so.6             [.] _IO_new_file_overflow (inlined)
+            |
+            ---_IO_new_file_overflow (inlined)
+               _IO_new_do_write (inlined)
+               new_do_write (inlined)
+               __libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.82%  matmul_O3  [kernel.kallsyms]     [k] memcg1_commit_charge
+            |
+            ---_dl_start_user
+               _dl_start
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               __mem_cgroup_charge
+               charge_memcg
+               memcg1_commit_charge
+
+     0.82%     0.00%  matmul_O3  ld-linux-x86-64.so.2  [.] _dl_start_user
+            |
+            ---_dl_start_user
+               _dl_start
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               __mem_cgroup_charge
+               charge_memcg
+               memcg1_commit_charge
+
+     0.82%     0.00%  matmul_O3  libc.so.6             [.] _IO_new_do_write (inlined)
+            |
+            ---_IO_new_do_write (inlined)
+               new_do_write (inlined)
+               __libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  ld-linux-x86-64.so.2  [.] _dl_start
+            |
+            ---_dl_start
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               __mem_cgroup_charge
+               charge_memcg
+               memcg1_commit_charge
+
+     0.82%     0.00%  matmul_O3  libc.so.6             [.] new_do_write (inlined)
+            |
+            ---new_do_write (inlined)
+               __libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  libc.so.6             [.] __libc_write (inlined)
+            |
+            ---__libc_write (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.82%  matmul_O3  [kernel.kallsyms]     [k] mas_walk
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               matmul
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               lock_vma_under_rcu
+               mas_walk
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] __x64_sys_write
+            |
+            ---__x64_sys_write
+               ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] alloc_anon_folio
+            |
+            ---alloc_anon_folio
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] ksys_write
+            |
+            ---ksys_write
+               vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] asm_sysvec_apic_timer_interrupt
+            |
+            ---asm_sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               irq_exit_rcu
+               __irq_exit_rcu
+               handle_softirqs
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] do_fault
+            |
+            ---do_fault
+               folio_prealloc
+               __mem_cgroup_charge
+               charge_memcg
+               memcg1_commit_charge
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] vfs_write
+            |
+            ---vfs_write
+               tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] folio_prealloc
+            |
+            ---folio_prealloc
+               __mem_cgroup_charge
+               charge_memcg
+               memcg1_commit_charge
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] sysvec_apic_timer_interrupt
+            |
+            ---sysvec_apic_timer_interrupt
+               irq_exit_rcu
+               __irq_exit_rcu
+               handle_softirqs
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] tty_write
+            |
+            ---tty_write
+               file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] __mem_cgroup_charge
+            |
+            ---__mem_cgroup_charge
+               charge_memcg
+               memcg1_commit_charge
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] file_tty_write.isra.0
+            |
+            ---file_tty_write.isra.0
+               iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] irq_exit_rcu
+            |
+            ---irq_exit_rcu
+               __irq_exit_rcu
+               handle_softirqs
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] __irq_exit_rcu
+            |
+            ---__irq_exit_rcu
+               handle_softirqs
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] charge_memcg
+            |
+            ---charge_memcg
+               memcg1_commit_charge
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] folio_add_lru_vma
+            |
+            ---folio_add_lru_vma
+               folio_add_lru
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] iterate_tty_write
+            |
+            ---iterate_tty_write
+               memset_orig
+
+     0.82%     0.00%  matmul_O3  [kernel.kallsyms]     [.] lock_vma_under_rcu
+            |
+            ---lock_vma_under_rcu
+               mas_walk
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
